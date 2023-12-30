@@ -1,0 +1,9 @@
+# Ignore directories
+Core/
+controller/
+views/
+
+# Ignore specific files
+back.php
+function.php
+router.php

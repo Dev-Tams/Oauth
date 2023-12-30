@@ -1,0 +1,26 @@
+label{
+    display: unset;
+    padding-bottom: unset;
+    color: unset;
+    overflow: unset;
+    font-size: unset;
+    font-family: unset;
+}
+.label{
+    display: flex;
+}
+
+span.em-style{
+    display: flex;
+    margin-right: 6px;
+    justify-content: flex-start;
+    color: #131316;
+    cursor: pointer;
+    font-weight: 600;
+} 
+
+span.em-style:active{
+    border-bottom: 4px solid #119e5f;
+    cursor:pointer; 
+}
+
