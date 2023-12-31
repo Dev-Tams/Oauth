@@ -1,2 +1,2 @@
 <?php
-require ('FE/signup.htm');
+require base_path('Public/signup.htm');

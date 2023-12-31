@@ -1,2 +1,2 @@
 <?php
-require ("FE/index.htm");
+require base_path("Public/index.htm");
