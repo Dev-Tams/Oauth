@@ -1,5 +1,6 @@
 <?php
 
+use Core\Response;
 function dd($value){
     echo '<pre>';
     var_dump($value);
@@ -12,4 +13,13 @@ function base_path( $path){
 
 function ref_path($path){
     return base_path('Core/'.$path);
+}
+
+
+function abort($code = Response::NOT_FOUND){
+
+    http_response_code($code);
+    
+    require base_path("views/{$code}.php");
+
 }
