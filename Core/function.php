@@ -15,6 +15,9 @@ function ref_path($path){
     return base_path('Core/'.$path);
 }
 
+function views($path){
+    return base_path('views/'.$path);
+}
 
 function abort($code = Response::NOT_FOUND){
 
