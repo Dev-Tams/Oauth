@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/FE/css/login.css">
     <link rel="stylesheet" href="css/login.css">
     
     <link rel="stylesheet" href="css/sigin-style.css">
@@ -30,29 +29,35 @@
             </div>
         </section> -->
         <main class="style-container">
-            <div class="label">
-                <span class="em-style">Email</span>
-                
-                <span class="em-style">Phone</span>
-            </div>
-            <form action="/register" method="POST" name="login-form">
-                <div class="name-email">
+            <form action="http://localhost:8000/api/v1/register" method="POST" name="login-form">
+                <div class="name">
+                    <label for="name"> Your name</label>
                     <span class="p-w">
-                    <input type="text" name="email" id="email" placeholder=" Email address" autocomplete="on">
+                    <input type="text" name="name" id="name" placeholder="Enter your name" autocomplete="on">
                     </span>
-                    <div class="email-error">
-                        <!--  -->
+                    <div class="email">
+                        <label for="email">Your email</label>
+                        <span class="p-w">
+                            <input type="text" name="email" id="email" placeholder="valid email address" autocomplete="on">
+                            </span>
                     </div>
                     
                 </div>
 
                 <div class="password">
-
+                    <label for="password">Your password</label>
                     <span class="p-w">
-                        <input type="password" name="pass" id="password" minlength="6" placeholder=" Create a Password" autocomplete="on">
+                        <input type="password" name="password" id="password" minlength="8" placeholder=" Create a Password">
                         <span class="icon delete" title="clear Password"></span>
                         <span class="icon reveal" title="show password"></span>
                     </span>
+                        <label for="password_confirm">Confirm Password</label>
+                    <span class="p-w">
+                        <input type="password" name="password_confirm" id="password_confirm" minlength="8" placeholder=" Re-enter Password">
+                        <span class="icon delete" title="clear Password"></span>
+                        <span class="icon reveal" title="show password"></span>
+                    </span>
+                    <div class="pass-error"></div>
                     <div class="pass-error"></div>
                     
                 </div>
@@ -83,9 +88,13 @@
                         </button>
                     </div>
                     <div class="btn-2">
-                        <button>
-                            <svg aria-hidden="true"  viewBox="0 0 48 48" width="48px" height="18px"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
-                        </button>
+                        <a href="http://localhost:8000/auth/google">
+                            <svg aria-hidden="true"  viewBox="0 0 48 48" width="48px" height="25px">
+                                <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+                                <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+                                <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+                                <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
+                            </a>
                     </div>
                     
                 
@@ -95,7 +104,6 @@
 
     </div>
     <script src="dom.js/reveal.js"></script>
-    <script src="/FE/dom.js/reveal.js"></script>
 </body>
 
 </html>

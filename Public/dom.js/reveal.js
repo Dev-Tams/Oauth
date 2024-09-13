@@ -5,7 +5,7 @@
 // Get references to the input element and the icon elements
 
 document.addEventListener('DOMContentLoaded', function(){
-    var passwordInput = document.getElementById("password");
+    var passwordInput = document.getElementById("password" || "password_confirm");
     var deleteIcon = document.querySelector(".delete");
     var revealIcon = document.querySelector(".reveal");
     

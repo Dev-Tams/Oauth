@@ -1,11 +1,3 @@
-label{
-    display: unset;
-    padding-bottom: unset;
-    color: unset;
-    overflow: unset;
-    font-size: unset;
-    font-family: unset;
-}
 .label{
     display: flex;
 }
@@ -24,3 +16,9 @@ span.em-style:active{
     cursor:pointer; 
 }
 
+label{
+    margin: 10px 0px 0px 0px;
+    color: #131316;
+    padding-bottom: 0px;
+    font-size: 14px;
+}

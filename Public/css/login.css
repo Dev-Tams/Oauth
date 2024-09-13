@@ -38,7 +38,7 @@ form{
 .password{
     margin: 15px 20px 15px 0px;
 }
-.name-email{
+.name, .emaill{
     margin: 30px 20px 10px 0px;   
 }
 label{
@@ -50,7 +50,7 @@ label{
     font-family: sans-serif;
 }
 span.p-w{
-   border: 1px solid #878787;
+   border: 2px solid #878787;
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -70,10 +70,10 @@ span.p-w:hover{
      border-radius: 5px;
  
  }
- input#email {
+ input#email, input#name {
     width: 100%;
  }
- input#password{
+ input#password, input#password_confirm{
     width: 75%;
  }
 input[type=text], input[type=password]{
@@ -130,7 +130,12 @@ input[type=submit]:hover{
     outline: none; 
     text-emphasis-color: green;
 }
-#email:focus{
+
+#password_confirm:focus{
+    outline: none; 
+    text-emphasis-color: green;
+}
+#email:focus, #name:focus{
     outline: none; 
     text-emphasis-color: #1a8f5c;
     text-shadow: #1a8f5c;

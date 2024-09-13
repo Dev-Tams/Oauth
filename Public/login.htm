@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/FE/css/login.css">
     <link rel="stylesheet" href="css/login.css">
     <title>LOGIN</title>
 </head>
@@ -44,7 +43,7 @@
                     <label for="password"> Password</label>
 
                     <span class="p-w">
-                        <input type="password" name="pass" id="password" minlength="6" placeholder="Password" autocomplete="on">
+                        <input type="password" name="password" id="password" minlength="6" placeholder="Password" autocomplete="on">
                         <span class="icon delete" title="clear Password"></span>
                         <span class="icon reveal" title="show password"></span>
                     </span>
@@ -91,7 +90,43 @@
 
     </div>
     <script src="dom.js/reveal.js"></script>
-    <script src="/FE/dom.js/reveal.js"></script>
+    <script>
+        document.querySelector('form[name="login-form"]').addEventListener('submit', async function (event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+    
+            
+            const data = {
+                email: email,
+                password: password
+            };
+    
+            try {
+                const response = await fetch('http://localhost:8000/api/v1/users', { 
+                    method: 'POST',
+                    headers: {
+                        'Accept' : 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+    
+                if (!response.ok) {
+                    throw new Error('Login failed');
+                }
+    
+                const result = await response.json();
+                alert('Login successful!');
+                //redirect when /{pages} available
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Login failed. Please check your credentials and try again.');
+            }
+        });
+    </script>
+    
 </body>
 
 </html>
